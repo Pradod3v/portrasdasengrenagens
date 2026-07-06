@@ -82,8 +82,8 @@ const QUESTIONS = [
   {
     text: 'A equipe BrontoByte compete em qual categoria da FIRST?',
     options: ['FLL Jr.', 'FLL', 'FTC', 'FRC'],
-    correctIndex: 3,
-    explanation: 'A BrontoByte é uma equipe de FRC (FIRST Robotics Competition).',
+    correctIndex: 2,
+    explanation: 'A BrontoByte é uma equipe de FTC (FIRST Tech Challenge).',
   },
   {
     text: 'O livro "Por Trás das Engrenagens" foi escrito por:',
