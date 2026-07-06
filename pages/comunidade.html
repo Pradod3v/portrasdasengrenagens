@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Compartilhe sua história com a FIRST Robotics na comunidade Por Trás das Engrenagens." />
+  <title>Comunidade | Por Trás das Engrenagens</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230057D9'/><text y='22' x='6' font-size='18'>⚙️</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/comunidade.css" />
+  <link rel="stylesheet" href="../css/responsivo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div id="loading-screen" role="status">
+    <div class="loading-logo">🤝 <span>Comunidade</span></div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html" class="nav-logo">
+      <i class="fa-solid fa-gear"></i>
+      <span>Por Trás das <strong>Engrenagens</strong></span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="livro.html">Livro</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="comunidade.html" class="active">Comunidade</a></li>
+      <li><a href="embaixadores.html">Embaixadores</a></li>
+      <li><a href="certificado.html" class="nav-cta"><i class="fa-solid fa-certificate"></i> Certificado</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-header comunidade-page" style="padding-top:100px;">
+    <h1>🤝 Comunidade</h1>
+    <p>Conte sua história com a FIRST e inspire outros estudantes e equipes brasileiras</p>
+  </header>
+
+  <main>
+    <!-- Formulário de história -->
+    <section class="story-form-section" aria-labelledby="form-title">
+      <div class="story-form-card fade-in">
+        <h2 id="form-title">Conte sua história</h2>
+        <p>Compartilhe sua experiência com a FIRST Robotics. Sua história pode inspirar outros!</p>
+
+        <form id="form-story" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="s-nome">Nome *</label>
+              <input class="form-control" type="text" id="s-nome" name="nome" placeholder="Seu nome" />
+              <span class="form-error" id="err-s-nome">Informe seu nome.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="s-equipe">Equipe *</label>
+              <input class="form-control" type="text" id="s-equipe" name="equipe" placeholder="Ex: BrontoByte" />
+              <span class="form-error" id="err-s-equipe">Informe sua equipe.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="s-cidade">Cidade *</label>
+              <input class="form-control" type="text" id="s-cidade" name="cidade" placeholder="Sua cidade" />
+              <span class="form-error" id="err-s-cidade">Informe sua cidade.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="s-categoria">Categoria</label>
+              <select class="form-control" id="s-categoria" name="categoria">
+                <option value="">Selecione</option>
+                <option value="FLL Jr.">FLL Jr.</option>
+                <option value="FLL">FLL</option>
+                <option value="FTC">FTC</option>
+                <option value="FRC">FRC</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="s-texto">Sua história *</label>
+            <textarea class="form-control" id="s-texto" name="texto" rows="5"
+              placeholder="Conte como a FIRST impactou sua vida, sua equipe, sua escola..."></textarea>
+            <span class="form-error" id="err-s-texto">Escreva sua história.</span>
+          </div>
+
+          <!-- Upload de fotos -->
+          <div class="form-group">
+            <label class="form-label">Fotos (opcional)</label>
+            <div class="photo-upload-area" id="photo-upload-area" role="button" tabindex="0" aria-label="Clique para adicionar fotos">
+              <input type="file" id="photo-input" accept="image/*" multiple />
+              <i class="fa-solid fa-camera"></i>
+              <p>Clique ou arraste fotos aqui<br /><small>PNG, JPG, WEBP — máx. 5MB cada</small></p>
+            </div>
+            <div class="photo-preview-grid" id="photo-preview-grid"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Publicar História
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Lista de histórias -->
+    <section class="stories-section" aria-labelledby="stories-title">
+      <h2 id="stories-title">Histórias da Comunidade</h2>
+      <div class="stories-grid" id="stories-grid">
+        <!-- Cards gerados pelo JS a partir do LocalStorage -->
+        <div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--gray-400);" id="stories-empty">
+          <i class="fa-solid fa-users" style="font-size:3rem;margin-bottom:1rem;display:block;"></i>
+          <p>Ainda não há histórias publicadas. Seja o primeiro!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="back-to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-chevron-up"></i></button>
+  <div id="toast-container" role="status" aria-live="polite"></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/comunidade.js"></script>
+</body>
+</html>

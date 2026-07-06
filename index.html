@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ===== Meta Tags SEO ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Por Trás das Engrenagens — Plataforma educacional gratuita sobre a FIRST Robotics para estudantes, professores e equipes brasileiras." />
+  <meta name="keywords" content="FIRST Robotics, FLL, FTC, FRC, robótica, educação, BrontoByte" />
+  <meta name="author" content="Equipe BrontoByte" />
+  <meta property="og:title" content="Por Trás das Engrenagens" />
+  <meta property="og:description" content="Conheça a FIRST através das histórias de quem vive essa experiência." />
+  <meta property="og:type" content="website" />
+  <title>Por Trás das Engrenagens | FIRST Robotics</title>
+
+  <!-- ===== Favicon (SVG inline) ===== -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230057D9'/><text y='22' x='6' font-size='18'>⚙️</text></svg>" />
+
+  <!-- ===== Estilos ===== -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/responsivo.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== Loading Screen ===== -->
+  <div id="loading-screen" role="status" aria-label="Carregando">
+    <div class="loading-logo">⚙️ Por Trás das <span>Engrenagens</span></div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <!-- ===== Barra de Progresso da Jornada ===== -->
+  <div class="journey-progress" aria-hidden="true">
+    <div class="journey-progress-fill" id="journey-fill"></div>
+  </div>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+    <a href="index.html" class="nav-logo" aria-label="Página inicial">
+      <i class="fa-solid fa-gear"></i>
+      <span>Por Trás das <strong>Engrenagens</strong></span>
+    </a>
+
+    <ul class="nav-links" id="nav-links" role="menubar">
+      <li role="none"><a href="index.html" class="active" role="menuitem">Início</a></li>
+      <li role="none"><a href="pages/livro.html" role="menuitem">Livro</a></li>
+      <li role="none"><a href="pages/quiz.html" role="menuitem">Quiz</a></li>
+      <li role="none"><a href="pages/comunidade.html" role="menuitem">Comunidade</a></li>
+      <li role="none"><a href="pages/embaixadores.html" role="menuitem">Embaixadores</a></li>
+      <li role="none"><a href="pages/certificado.html" class="nav-cta" role="menuitem"><i class="fa-solid fa-certificate"></i> Certificado</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <!-- Formas de fundo decorativas -->
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-rocket"></i>
+        Plataforma educacional gratuita
+      </div>
+
+      <h1 class="hero-title" id="hero-title">
+        Por Trás das<br />
+        <span class="highlight">Engrenagens</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Conheça a FIRST através das histórias de quem vive essa experiência.
+        Uma jornada educacional para estudantes, professores e equipes brasileiras.
+      </p>
+
+      <div class="hero-actions">
+        <!-- Abre o modal de início de jornada -->
+        <button class="btn btn-primary btn-lg" id="btn-start-journey" aria-haspopup="dialog">
+          <i class="fa-solid fa-play"></i> Começar Jornada
+        </button>
+        <a href="pages/livro.html" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,.5);">
+          <i class="fa-solid fa-book-open"></i> Conhecer o Livro
+        </a>
+      </div>
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Explorar</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ===== Seção "O que é?" ===== -->
+  <section class="section" id="sobre" aria-labelledby="sobre-title">
+    <div class="about-grid">
+      <!-- Texto -->
+      <div class="about-text fade-in-left">
+        <span class="section-tag">Sobre o Projeto</span>
+        <h2 class="section-title" id="sobre-title">O que é?</h2>
+        <p>
+          <strong>Por Trás das Engrenagens</strong> nasceu para tornar a FIRST mais acessível
+          para estudantes, professores e equipes brasileiras. É um livro digital, uma plataforma
+          de aprendizado e uma comunidade — tudo em um só lugar.
+        </p>
+        <p>
+          A FIRST (For Inspiration and Recognition of Science and Technology) é uma organização
+          global que inspira jovens a se tornarem líderes em ciência e tecnologia por meio de
+          competições de robótica desafiadoras e empolgantes.
+        </p>
+        <a href="pages/livro.html" class="btn btn-primary">
+          <i class="fa-solid fa-book-open"></i> Ler o Livro Digital
+        </a>
+      </div>
+
+      <!-- Ilustração SVG -->
+      <div class="about-illustration fade-in-right" aria-hidden="true">
+        <svg viewBox="0 0 440 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de robótica">
+          <!-- Fundo -->
+          <rect width="440" height="380" rx="24" fill="#EFF6FF"/>
+          <!-- Robô corpo -->
+          <rect x="160" y="120" width="120" height="140" rx="16" fill="#0057D9"/>
+          <!-- Cabeça -->
+          <rect x="175" y="72" width="90" height="70" rx="14" fill="#0057D9"/>
+          <!-- Olhos -->
+          <circle cx="205" cy="100" r="12" fill="white"/>
+          <circle cx="235" cy="100" r="12" fill="white"/>
+          <circle cx="207" cy="102" r="6" fill="#0A1628"/>
+          <circle cx="237" cy="102" r="6" fill="#0A1628"/>
+          <!-- Boca -->
+          <rect x="200" y="122" width="40" height="8" rx="4" fill="white" opacity=".5"/>
+          <!-- Antena -->
+          <line x1="220" y1="72" x2="220" y2="50" stroke="#0057D9" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="220" cy="44" r="8" fill="#00C6FF"/>
+          <!-- Braços -->
+          <rect x="100" y="130" width="60" height="20" rx="10" fill="#3B82F6"/>
+          <rect x="280" y="130" width="60" height="20" rx="10" fill="#3B82F6"/>
+          <!-- Mãos -->
+          <circle cx="96" cy="140" r="14" fill="#60A5FA"/>
+          <circle cx="344" cy="140" r="14" fill="#60A5FA"/>
+          <!-- Pernas -->
+          <rect x="178" y="260" width="36" height="60" rx="10" fill="#1D4ED8"/>
+          <rect x="226" y="260" width="36" height="60" rx="10" fill="#1D4ED8"/>
+          <!-- Pés -->
+          <rect x="168" y="308" width="56" height="20" rx="8" fill="#1E40AF"/>
+          <rect x="216" y="308" width="56" height="20" rx="8" fill="#1E40AF"/>
+          <!-- Painel do peito -->
+          <rect x="180" y="150" width="80" height="50" rx="8" fill="#1D4ED8"/>
+          <rect x="188" y="158" width="20" height="8" rx="4" fill="#00C6FF"/>
+          <rect x="188" y="172" width="32" height="8" rx="4" fill="#60A5FA"/>
+          <rect x="188" y="186" width="16" height="8" rx="4" fill="#93C5FD"/>
+          <!-- Engrenagens decorativas -->
+          <circle cx="60" cy="60" r="30" fill="none" stroke="#BFDBFE" stroke-width="8"/>
+          <circle cx="60" cy="60" r="12" fill="#BFDBFE"/>
+          <circle cx="380" cy="300" r="24" fill="none" stroke="#BFDBFE" stroke-width="6"/>
+          <circle cx="380" cy="300" r="10" fill="#BFDBFE"/>
+          <!-- Estrelas -->
+          <text x="340" y="80" font-size="20" fill="#FCD34D">★</text>
+          <text x="80" y="320" font-size="16" fill="#FCD34D">★</text>
+          <text x="360" y="180" font-size="12" fill="#A5B4FC">★</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Seção "O que você encontrará?" ===== -->
+  <section class="section section-alt" id="recursos" aria-labelledby="recursos-title">
+    <div class="section-header fade-in">
+      <span class="section-tag">Conteúdo</span>
+      <h2 class="section-title" id="recursos-title">O que você encontrará?</h2>
+      <p class="section-subtitle">Uma jornada completa pelo universo da FIRST Robotics, do básico ao avançado.</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Card 1 -->
+      <article class="feature-card fade-in" style="transition-delay:.1s">
+        <div class="feature-icon">🤖</div>
+        <h3>História da FIRST</h3>
+        <p>Descubra como a FIRST foi fundada, sua missão e como chegou ao Brasil.</p>
+      </article>
+      <!-- Card 2 -->
+      <article class="feature-card fade-in" style="transition-delay:.2s">
+        <div class="feature-icon">🏆</div>
+        <h3>Categorias</h3>
+        <p>Conheça as quatro categorias: FLL Jr., FLL, FTC e FRC — e suas diferenças.</p>
+      </article>
+      <!-- Card 3 -->
+      <article class="feature-card fade-in" style="transition-delay:.3s">
+        <div class="feature-icon">📘</div>
+        <h3>Livro Digital</h3>
+        <p>Leia o livro completo escrito pela equipe BrontoByte e equipes parceiras.</p>
+      </article>
+      <!-- Card 4 -->
+      <article class="feature-card fade-in" style="transition-delay:.4s">
+        <div class="feature-icon">🎓</div>
+        <h3>Certificado</h3>
+        <p>Conclua a jornada, passe no quiz e receba seu certificado personalizado.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Seção Impacto ===== -->
+  <section class="impact-section" id="impacto" aria-labelledby="impacto-title">
+    <div class="section-header fade-in">
+      <span class="section-tag" style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);">Nosso Impacto</span>
+      <h2 class="section-title" id="impacto-title">Números que inspiram</h2>
+      <p class="section-subtitle">Cada número representa uma pessoa que descobriu o poder da FIRST.</p>
+    </div>
+
+    <div class="impact-grid">
+      <!-- Os valores são controlados pelo JS (main.js) -->
+      <div class="impact-item fade-in" style="transition-delay:.1s">
+        <div class="impact-icon">📖</div>
+        <div class="impact-number" data-target="60" data-suffix="+">0</div>
+        <div class="impact-label">Leitores</div>
+      </div>
+      <div class="impact-item fade-in" style="transition-delay:.2s">
+        <div class="impact-icon">🤝</div>
+        <div class="impact-number" data-target="5" data-suffix="">0</div>
+        <div class="impact-label">Equipes parceiras</div>
+      </div>
+      <div class="impact-item fade-in" style="transition-delay:.3s">
+        <div class="impact-icon">🇧🇷</div>
+        <div class="impact-number" data-target="1" data-suffix="" data-text="Brasil">0</div>
+        <div class="impact-label">Projeto gratuito</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA Final ===== -->
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div class="cta-card fade-in">
+      <h2 id="cta-title">Pronto para começar sua jornada?</h2>
+      <p>Cadastre-se gratuitamente, leia o livro, faça o quiz e conquiste seu certificado.</p>
+      <div class="cta-actions">
+        <button class="btn btn-white btn-lg" id="btn-start-journey-2">
+          <i class="fa-solid fa-play"></i> Começar Agora
+        </button>
+        <a href="pages/quiz.html" class="btn btn-lg" style="background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.4);">
+          <i class="fa-solid fa-question-circle"></i> Fazer o Quiz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <i class="fa-solid fa-gear"></i>
+          <span>Por Trás das <strong style="color:#fff">Engrenagens</strong></span>
+        </div>
+        <p>Plataforma educacional gratuita sobre a FIRST Robotics, criada pela Equipe BrontoByte para democratizar o acesso ao conhecimento.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pages/livro.html">Livro Digital</a></li>
+          <li><a href="pages/quiz.html">Quiz</a></li>
+          <li><a href="pages/certificado.html">Certificado</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Comunidade</h4>
+        <ul>
+          <li><a href="pages/comunidade.html">Histórias</a></li>
+          <li><a href="pages/embaixadores.html">Embaixadores</a></li>
+          <li><a href="pages/embaixadores.html#mapa">Mapa</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>FIRST</h4>
+        <ul>
+          <li><a href="https://www.firstinspires.org" target="_blank" rel="noopener">FIRST Inspires</a></li>
+          <li><a href="https://www.firstlegoleague.org" target="_blank" rel="noopener">FLL</a></li>
+          <li><a href="https://www.firstinspires.org/robotics/ftc" target="_blank" rel="noopener">FTC</a></li>
+          <li><a href="https://www.firstinspires.org/robotics/frc" target="_blank" rel="noopener">FRC</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Por Trás das Engrenagens — Equipe BrontoByte. Projeto gratuito e educacional.</span>
+      <span>Feito com ❤️ para a comunidade FIRST brasileira</span>
+    </div>
+  </footer>
+
+  <!-- ===== Botão Voltar ao Topo ===== -->
+  <button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ===== Toast Container ===== -->
+  <div id="toast-container" role="status" aria-live="polite"></div>
+
+  <!-- ===== Modal: Início da Jornada ===== -->
+  <div class="modal-overlay" id="modal-jornada" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Fechar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h2 class="modal-title" id="modal-title">🚀 Iniciar Jornada</h2>
+      <p class="modal-subtitle">Preencha seus dados para começar. É gratuito e leva menos de 1 minuto!</p>
+
+      <form id="form-jornada" novalidate>
+        <!-- Nome -->
+        <div class="form-group">
+          <label class="form-label" for="j-nome">Nome completo *</label>
+          <input class="form-control" type="text" id="j-nome" name="nome" placeholder="Seu nome" autocomplete="name" />
+          <span class="form-error" id="err-nome">Por favor, informe seu nome.</span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="j-email">E-mail *</label>
+          <input class="form-control" type="email" id="j-email" name="email" placeholder="seu@email.com" autocomplete="email" />
+          <span class="form-error" id="err-email">Informe um e-mail válido.</span>
+        </div>
+
+        <!-- Cidade / Estado -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="j-cidade">Cidade *</label>
+            <input class="form-control" type="text" id="j-cidade" name="cidade" placeholder="Sua cidade" />
+            <span class="form-error" id="err-cidade">Informe sua cidade.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="j-estado">Estado *</label>
+            <select class="form-control" id="j-estado" name="estado">
+              <option value="">Selecione</option>
+              <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+              <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+              <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+              <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+              <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+              <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+              <option>SP</option><option>SE</option><option>TO</option>
+            </select>
+            <span class="form-error" id="err-estado">Selecione seu estado.</span>
+          </div>
+        </div>
+
+        <!-- Você é -->
+        <div class="form-group">
+          <label class="form-label" for="j-perfil">Você é: *</label>
+          <select class="form-control" id="j-perfil" name="perfil">
+            <option value="">Selecione seu perfil</option>
+            <option value="professor">Professor / Técnico</option>
+            <option value="fll">Competidor FLL</option>
+            <option value="ftc">Competidor FTC</option>
+            <option value="frc">Competidor FRC</option>
+            <option value="mentor">Mentor</option>
+            <option value="outro">Outro</option>
+          </select>
+          <span class="form-error" id="err-perfil">Selecione seu perfil.</span>
+        </div>
+
+        <!-- Conhecia a FIRST? -->
+        <div class="form-group">
+          <label class="form-label">Conhecia a FIRST? *</label>
+          <div class="radio-group" role="radiogroup" aria-label="Conhecia a FIRST?">
+            <label class="radio-option">
+              <input type="radio" name="conhecia" value="sim" /> Sim, já conhecia
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="conhecia" value="nao" /> Não conhecia
+            </label>
+          </div>
+          <span class="form-error" id="err-conhecia">Selecione uma opção.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full mt-2" style="justify-content:center;">
+          <i class="fa-solid fa-arrow-right"></i> Continuar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Scripts ===== -->
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

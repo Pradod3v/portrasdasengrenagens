@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Leia o livro digital Por Trás das Engrenagens sobre a FIRST Robotics." />
+  <title>Livro Digital | Por Trás das Engrenagens</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230057D9'/><text y='22' x='6' font-size='18'>⚙️</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/livro.css" />
+  <link rel="stylesheet" href="../css/responsivo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen" role="status">
+    <div class="loading-logo">📘 <span>Livro Digital</span></div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <!-- Barra de progresso de leitura -->
+  <div class="reading-progress-bar" aria-hidden="true">
+    <div class="reading-progress-fill" id="reading-fill"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="../index.html" class="nav-logo">
+      <i class="fa-solid fa-gear"></i>
+      <span>Por Trás das <strong>Engrenagens</strong></span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="livro.html" class="active">Livro</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="comunidade.html">Comunidade</a></li>
+      <li><a href="embaixadores.html">Embaixadores</a></li>
+      <li><a href="certificado.html" class="nav-cta"><i class="fa-solid fa-certificate"></i> Certificado</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Cabeçalho da página -->
+  <header class="livro-header livro-page">
+    <h1>📘 Livro Digital</h1>
+    <p>Por Trás das Engrenagens — escrito pela Equipe BrontoByte e equipes parceiras</p>
+  </header>
+
+  <!-- Layout: leitor + índice -->
+  <main class="livro-layout" id="main-content">
+
+    <!-- Leitor de PDF -->
+    <div>
+      <div class="pdf-viewer-wrap" id="pdf-viewer-wrap">
+        <!-- O iframe será inserido pelo JS quando o PDF estiver disponível -->
+        <div class="pdf-placeholder" id="pdf-placeholder">
+          <i class="fa-solid fa-file-pdf"></i>
+          <p>O PDF do livro será exibido aqui.<br />Adicione o arquivo em <strong>assets/pdf/livro.pdf</strong> para ativá-lo.</p>
+          <a href="../assets/pdf/livro.pdf" class="btn btn-primary mt-2" download>
+            <i class="fa-solid fa-download"></i> Baixar PDF
+          </a>
+        </div>
+        <!-- iframe real (oculto até o PDF existir) -->
+        <iframe
+          id="pdf-iframe"
+          src=""
+          title="Livro Por Trás das Engrenagens"
+          loading="lazy"
+          style="display:none;"
+        ></iframe>
+      </div>
+
+      <!-- Ações do leitor -->
+      <div class="pdf-actions">
+        <div style="display:flex;gap:.75rem;align-items:center;">
+          <span id="reading-percent" style="font-size:.875rem;color:var(--gray-500);font-weight:600;">0% lido</span>
+        </div>
+        <div style="display:flex;gap:.75rem;">
+          <a href="../assets/pdf/livro.pdf" class="btn btn-outline" download>
+            <i class="fa-solid fa-download"></i> Baixar
+          </a>
+          <button class="btn btn-primary" id="btn-finish-reading">
+            <i class="fa-solid fa-check-circle"></i> Finalizar Leitura
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Índice lateral -->
+    <aside class="livro-sidebar" aria-label="Índice do livro">
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">
+          <i class="fa-solid fa-list"></i> Índice
+        </div>
+        <nav class="chapter-list" id="chapter-list" aria-label="Capítulos">
+          <!-- Capítulos — ao clicar, o JS navega para a página do PDF -->
+          <div class="chapter-item active" data-page="1" tabindex="0" role="button" aria-label="Introdução">
+            <span class="chapter-num">0</span>
+            <span>Introdução</span>
+          </div>
+          <div class="chapter-item" data-page="5" tabindex="0" role="button" aria-label="Capítulo 1">
+            <span class="chapter-num">1</span>
+            <span>O que é a FIRST?</span>
+          </div>
+          <div class="chapter-item" data-page="15" tabindex="0" role="button" aria-label="Capítulo 2">
+            <span class="chapter-num">2</span>
+            <span>História e Missão</span>
+          </div>
+          <div class="chapter-item" data-page="25" tabindex="0" role="button" aria-label="Capítulo 3">
+            <span class="chapter-num">3</span>
+            <span>FLL Jr. — Explore</span>
+          </div>
+          <div class="chapter-item" data-page="35" tabindex="0" role="button" aria-label="Capítulo 4">
+            <span class="chapter-num">4</span>
+            <span>FLL — Challenge</span>
+          </div>
+          <div class="chapter-item" data-page="45" tabindex="0" role="button" aria-label="Capítulo 5">
+            <span class="chapter-num">5</span>
+            <span>FTC — Tech Challenge</span>
+          </div>
+          <div class="chapter-item" data-page="55" tabindex="0" role="button" aria-label="Capítulo 6">
+            <span class="chapter-num">6</span>
+            <span>FRC — Robotics Competition</span>
+          </div>
+          <div class="chapter-item" data-page="65" tabindex="0" role="button" aria-label="Capítulo 7">
+            <span class="chapter-num">7</span>
+            <span>Gracious Professionalism</span>
+          </div>
+          <div class="chapter-item" data-page="75" tabindex="0" role="button" aria-label="Capítulo 8">
+            <span class="chapter-num">8</span>
+            <span>BrontoByte — Nossa Jornada</span>
+          </div>
+          <div class="chapter-item" data-page="85" tabindex="0" role="button" aria-label="Capítulo 9">
+            <span class="chapter-num">9</span>
+            <span>Equipes Parceiras</span>
+          </div>
+          <div class="chapter-item" data-page="95" tabindex="0" role="button" aria-label="Conclusão">
+            <span class="chapter-num">✓</span>
+            <span>Conclusão</span>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Progresso de leitura -->
+      <div class="sidebar-card" style="margin-top:1rem;">
+        <div class="sidebar-card-header">
+          <i class="fa-solid fa-chart-line"></i> Seu Progresso
+        </div>
+        <div style="padding:1.25rem;">
+          <div style="display:flex;justify-content:space-between;font-size:.875rem;font-weight:600;color:var(--gray-600);margin-bottom:.5rem;">
+            <span>Leitura</span>
+            <span id="sidebar-percent">0%</span>
+          </div>
+          <div style="height:8px;background:var(--gray-200);border-radius:99px;overflow:hidden;">
+            <div id="sidebar-progress-fill" style="height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:99px;width:0%;transition:width .3s ease;"></div>
+          </div>
+          <p style="font-size:.8rem;color:var(--gray-400);margin-top:.75rem;">
+            Avance na leitura e clique em "Finalizar Leitura" para liberar o certificado.
+          </p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== Avaliação Pós-Leitura ===== -->
+  <section class="avaliacao-section" id="avaliacao" style="display:none;" aria-labelledby="aval-title">
+    <div class="avaliacao-card fade-in">
+      <h2 id="aval-title">🎉 Parabéns!</h2>
+      <p>Agora queremos conhecer sua experiência com o livro.</p>
+
+      <form id="form-avaliacao" novalidate>
+        <!-- Estrelas -->
+        <div class="form-group">
+          <label class="form-label">Avalie o livro:</label>
+          <div class="stars-container" id="stars-container" role="radiogroup" aria-label="Avaliação por estrelas">
+            <button type="button" class="star-btn" data-star="1" aria-label="1 estrela">★</button>
+            <button type="button" class="star-btn" data-star="2" aria-label="2 estrelas">★</button>
+            <button type="button" class="star-btn" data-star="3" aria-label="3 estrelas">★</button>
+            <button type="button" class="star-btn" data-star="4" aria-label="4 estrelas">★</button>
+            <button type="button" class="star-btn" data-star="5" aria-label="5 estrelas">★</button>
+          </div>
+          <input type="hidden" id="aval-stars" name="stars" value="0" />
+          <span class="form-error" id="err-stars">Selecione uma avaliação.</span>
+        </div>
+
+        <!-- O livro ajudou? -->
+        <div class="form-group">
+          <label class="form-label">O livro ajudou? *</label>
+          <div class="radio-group" role="radiogroup">
+            <label class="radio-option"><input type="radio" name="ajudou" value="muito" /> Muito</label>
+            <label class="radio-option"><input type="radio" name="ajudou" value="pouco" /> Pouco</label>
+            <label class="radio-option"><input type="radio" name="ajudou" value="nao" /> Não</label>
+          </div>
+          <span class="form-error" id="err-ajudou">Selecione uma opção.</span>
+        </div>
+
+        <!-- Capítulo favorito -->
+        <div class="form-group">
+          <label class="form-label" for="aval-capitulo">Qual capítulo gostou mais?</label>
+          <input class="form-control" type="text" id="aval-capitulo" name="capitulo" placeholder="Ex: Capítulo 6 — FRC" />
+        </div>
+
+        <!-- O que sentiu falta? -->
+        <div class="form-group">
+          <label class="form-label" for="aval-falta">O que sentiu falta?</label>
+          <textarea class="form-control" id="aval-falta" name="falta" rows="3" placeholder="Sua sugestão é muito valiosa..."></textarea>
+        </div>
+
+        <!-- Indicaria? -->
+        <div class="form-group">
+          <label class="form-label">Indicaria para alguém? *</label>
+          <div class="radio-group" role="radiogroup">
+            <label class="radio-option"><input type="radio" name="indicaria" value="sim" /> Sim</label>
+            <label class="radio-option"><input type="radio" name="indicaria" value="nao" /> Não</label>
+          </div>
+          <span class="form-error" id="err-indicaria">Selecione uma opção.</span>
+        </div>
+
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Enviar Avaliação
+          </button>
+          <a href="quiz.html" class="btn btn-outline">
+            <i class="fa-solid fa-question-circle"></i> Ir para o Quiz
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Botão voltar ao topo -->
+  <button id="back-to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-chevron-up"></i></button>
+  <div id="toast-container" role="status" aria-live="polite"></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/livro.js"></script>
+</body>
+</html>

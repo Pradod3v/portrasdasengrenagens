@@ -1,0 +1,219 @@
+/* ============================================================
+   home.css — Estilos da Página Inicial
+   ============================================================ */
+
+/* ---- Hero Section ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a1628 0%, #0d2060 50%, #0057D9 100%);
+  padding: 0 5%;
+}
+
+.hero-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-bg-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: .25;
+}
+.shape-1 { width: 600px; height: 600px; background: #00C6FF; top: -200px; right: -100px; }
+.shape-2 { width: 400px; height: 400px; background: #0057D9; bottom: -100px; left: -100px; }
+.shape-3 { width: 300px; height: 300px; background: #3B82F6; top: 40%; right: 20%; }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  animation: heroIn .9s ease forwards;
+}
+@keyframes heroIn { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.9);
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .35rem .9rem;
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+  letter-spacing: .5px;
+}
+.hero-badge i { color: var(--accent); }
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+}
+.hero-title .highlight {
+  background: linear-gradient(90deg, var(--accent), #7DD3FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: rgba(255,255,255,.5);
+  font-size: .8rem;
+  animation: bounce 2s infinite;
+}
+.hero-scroll i { font-size: 1.2rem; }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
+
+/* ---- O que é? ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-text .section-tag { margin-bottom: .75rem; }
+.about-text .section-title { text-align: left; }
+.about-text p { color: var(--gray-600); line-height: 1.8; margin-bottom: 1rem; }
+.about-text p:last-of-type { margin-bottom: 1.5rem; }
+
+.about-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-illustration svg { width: 100%; max-width: 440px; }
+
+/* ---- Cards de recursos ---- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.feature-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-100);
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  cursor: default;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0,87,217,.2);
+}
+.feature-icon {
+  width: 64px; height: 64px;
+  border-radius: var(--radius);
+  background: rgba(0,87,217,.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.75rem;
+  margin: 0 auto 1.25rem;
+  transition: background var(--transition);
+}
+.feature-card:hover .feature-icon { background: rgba(0,87,217,.15); }
+.feature-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: .5rem;
+}
+.feature-card p { font-size: .9rem; color: var(--gray-500); line-height: 1.6; }
+
+/* ---- Impacto / Contadores ---- */
+.impact-section {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  padding: 5rem 5%;
+  text-align: center;
+}
+.impact-section .section-title { color: var(--white); }
+.impact-section .section-subtitle { color: rgba(255,255,255,.7); }
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.impact-item {
+  background: rgba(255,255,255,.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  transition: background var(--transition), transform var(--transition);
+}
+.impact-item:hover { background: rgba(255,255,255,.15); transform: translateY(-4px); }
+.impact-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.impact-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+.impact-label { font-size: 1rem; color: rgba(255,255,255,.75); font-weight: 500; }
+
+/* ---- CTA Final ---- */
+.cta-section {
+  background: var(--gray-50);
+  padding: 6rem 5%;
+  text-align: center;
+}
+.cta-card {
+  background: linear-gradient(135deg, var(--primary), #0072FF);
+  border-radius: var(--radius-xl);
+  padding: 4rem 3rem;
+  color: var(--white);
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0,87,217,.4);
+}
+.cta-card h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.cta-card p { font-size: 1.05rem; color: rgba(255,255,255,.8); margin-bottom: 2rem; }
+.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }

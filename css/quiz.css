@@ -1,0 +1,160 @@
+/* ============================================================
+   quiz.css — Página do Quiz
+   ============================================================ */
+
+.quiz-page { padding-top: 70px; min-height: 100vh; background: var(--gray-50); }
+
+.quiz-header {
+  background: linear-gradient(135deg, #0a1628, #0057D9);
+  padding: 3rem 5%;
+  color: var(--white);
+  text-align: center;
+}
+.quiz-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: .5rem;
+}
+.quiz-header p { color: rgba(255,255,255,.75); }
+
+.quiz-container {
+  max-width: 720px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Barra de progresso do quiz */
+.quiz-progress-wrap {
+  margin-bottom: 2rem;
+}
+.quiz-progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--gray-500);
+  margin-bottom: .5rem;
+}
+.quiz-progress-bar {
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 99px;
+  transition: width .5s ease;
+}
+
+/* Card da pergunta */
+.question-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  animation: questionIn .4s ease forwards;
+}
+@keyframes questionIn { from { opacity:0; transform:translateX(30px); } to { opacity:1; transform:translateX(0); } }
+@keyframes questionOut { from { opacity:1; transform:translateX(0); } to { opacity:0; transform:translateX(-30px); } }
+.question-card.leaving { animation: questionOut .3s ease forwards; }
+
+.question-number {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: .75rem;
+}
+.question-text {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 1.75rem;
+  line-height: 1.4;
+}
+
+.options-list { display: flex; flex-direction: column; gap: .75rem; }
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  text-align: left;
+  font-size: .95rem;
+  color: var(--gray-700);
+  font-weight: 500;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+  cursor: pointer;
+  width: 100%;
+}
+.option-btn:hover:not(:disabled) { border-color: var(--primary); background: rgba(0,87,217,.04); transform: translateX(4px); }
+.option-btn .option-letter {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background var(--transition), color var(--transition);
+}
+.option-btn:hover:not(:disabled) .option-letter { background: var(--primary); color: var(--white); }
+.option-btn.correct { border-color: var(--success); background: rgba(34,197,94,.08); color: var(--gray-900); }
+.option-btn.correct .option-letter { background: var(--success); color: var(--white); }
+.option-btn.wrong { border-color: var(--danger); background: rgba(239,68,68,.08); color: var(--gray-900); }
+.option-btn.wrong .option-letter { background: var(--danger); color: var(--white); }
+.option-btn:disabled { cursor: default; }
+
+.question-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.75rem;
+}
+
+/* Resultado */
+.quiz-result {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  animation: questionIn .5s ease forwards;
+}
+.result-emoji { font-size: 4rem; margin-bottom: 1rem; }
+.result-score {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: .5rem;
+}
+.result-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: .5rem;
+}
+.result-sub { color: var(--gray-500); margin-bottom: 2rem; }
+.result-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* Confetes */
+.confetti-piece {
+  position: fixed;
+  width: 10px; height: 10px;
+  top: -10px;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+  z-index: 9999;
+  pointer-events: none;
+}
+@keyframes confettiFall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}

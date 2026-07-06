@@ -1,0 +1,161 @@
+/* ============================================================
+   certificado.css — Página do Certificado
+   ============================================================ */
+
+.cert-page { padding-top: 70px; min-height: 100vh; background: var(--gray-50); }
+
+.cert-header {
+  background: linear-gradient(135deg, #0a1628, #0057D9);
+  padding: 3rem 5%;
+  color: var(--white);
+  text-align: center;
+}
+.cert-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: .5rem;
+}
+.cert-header p { color: rgba(255,255,255,.75); }
+
+.cert-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* O certificado em si */
+#certificate-preview {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1.414 / 1; /* A4 landscape */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 5rem;
+  border: 8px solid var(--primary);
+}
+
+.cert-border-inner {
+  position: absolute;
+  inset: 16px;
+  border: 2px solid rgba(0,87,217,.2);
+  border-radius: calc(var(--radius-xl) - 8px);
+  pointer-events: none;
+}
+
+.cert-corner {
+  position: absolute;
+  width: 60px; height: 60px;
+}
+.cert-corner svg { width: 100%; height: 100%; }
+.cert-corner.tl { top: 24px; left: 24px; }
+.cert-corner.tr { top: 24px; right: 24px; transform: scaleX(-1); }
+.cert-corner.bl { bottom: 24px; left: 24px; transform: scaleY(-1); }
+.cert-corner.br { bottom: 24px; right: 24px; transform: scale(-1); }
+
+.cert-logo-area {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+.cert-logo-icon {
+  width: 48px; height: 48px;
+  background: var(--primary);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  font-size: 1.4rem;
+}
+.cert-logo-text {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.cert-logo-text small { display: block; font-size: .7rem; color: var(--gray-500); font-weight: 500; }
+
+.cert-presents {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: .5rem;
+}
+.cert-certifies {
+  font-size: 1rem;
+  color: var(--gray-600);
+  margin-bottom: .5rem;
+}
+.cert-name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: .75rem;
+  line-height: 1.1;
+}
+.cert-completed {
+  font-size: .95rem;
+  color: var(--gray-600);
+  margin-bottom: .25rem;
+}
+.cert-course {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 2rem;
+}
+
+.cert-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+}
+.cert-signature {
+  text-align: center;
+}
+.cert-sig-line {
+  width: 160px;
+  height: 1px;
+  background: var(--gray-300);
+  margin: 0 auto .5rem;
+}
+.cert-sig-name { font-size: .85rem; font-weight: 700; color: var(--gray-700); }
+.cert-sig-role { font-size: .75rem; color: var(--gray-400); }
+
+.cert-date-area { text-align: right; }
+.cert-date-label { font-size: .75rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; }
+.cert-date-value { font-size: .95rem; font-weight: 700; color: var(--gray-700); }
+
+/* Ações */
+.cert-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Bloqueio sem dados */
+.cert-locked {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cert-locked i { font-size: 3rem; color: var(--gray-300); margin-bottom: 1rem; }
+.cert-locked h2 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--gray-700); margin-bottom: .5rem; }
+.cert-locked p { color: var(--gray-500); margin-bottom: 1.5rem; }

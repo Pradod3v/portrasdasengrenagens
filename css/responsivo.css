@@ -1,0 +1,96 @@
+/* ============================================================
+   responsivo.css — Media Queries
+   ============================================================ */
+
+/* ---- Tablet (≤ 1024px) ---- */
+@media (max-width: 1024px) {
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .about-grid { gap: 2.5rem; }
+  .livro-layout { grid-template-columns: 1fr 260px; }
+}
+
+/* ---- Tablet pequeno (≤ 768px) ---- */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-links {
+    position: fixed;
+    top: 70px; left: 0; right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 5%;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-110%);
+    transition: transform var(--transition);
+    z-index: 999;
+  }
+  .nav-links.open { transform: translateY(0); }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero { padding: 6rem 5% 4rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; }
+  .about-illustration { order: -1; }
+
+  /* Features */
+  .features-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Impact */
+  .impact-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* CTA */
+  .cta-card { padding: 2.5rem 1.5rem; }
+  .cta-actions { flex-direction: column; align-items: center; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+
+  /* Livro */
+  .livro-layout { grid-template-columns: 1fr; }
+  .livro-sidebar { position: static; }
+
+  /* Certificado */
+  #certificate-preview { padding: 2rem; }
+  .cert-footer { flex-direction: column; gap: 1.5rem; align-items: center; }
+
+  /* Grids */
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Modal */
+  .modal { padding: 1.75rem; }
+}
+
+/* ---- Mobile (≤ 480px) ---- */
+@media (max-width: 480px) {
+  .section { padding: 3.5rem 4%; }
+  .features-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 2.2rem; }
+  .section-title { font-size: 1.6rem; }
+  .quiz-container { padding: 0 1rem; }
+  .question-card { padding: 1.5rem; }
+  .avaliacao-card { padding: 1.5rem; }
+  .story-form-card { padding: 1.5rem; }
+  .embaixador-form-card { padding: 1.5rem; }
+  .cert-container { padding: 0 1rem; }
+  #certificate-preview { padding: 1.5rem 1rem; }
+  .cert-name { font-size: 1.5rem; }
+  .materials-grid { grid-template-columns: repeat(2, 1fr); }
+  #toast-container { right: 1rem; bottom: 1rem; }
+  .toast { min-width: 200px; }
+}
+
+/* ---- Print (para certificado) ---- */
+@media print {
+  .navbar, .cert-header, .cert-actions, #back-to-top, #toast-container, .journey-progress { display: none !important; }
+  .cert-page { padding-top: 0; }
+  #certificate-preview { box-shadow: none; border-radius: 0; }
+}

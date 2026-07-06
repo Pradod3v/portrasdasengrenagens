@@ -1,0 +1,261 @@
+/* ============================================================
+   comunidade.css — Comunidade e Embaixadores
+   ============================================================ */
+
+/* ---- Comunidade ---- */
+.comunidade-page { padding-top: 70px; min-height: 100vh; }
+
+.page-header {
+  background: linear-gradient(135deg, #0a1628, #0057D9);
+  padding: 3.5rem 5%;
+  color: var(--white);
+  text-align: center;
+}
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: .5rem;
+}
+.page-header p { color: rgba(255,255,255,.75); font-size: 1rem; }
+
+/* Formulário de história */
+.story-form-section { padding: 3rem 5%; background: var(--gray-50); }
+.story-form-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+.story-form-card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: .5rem;
+}
+.story-form-card > p { color: var(--gray-500); margin-bottom: 1.75rem; }
+
+/* Upload de foto */
+.photo-upload-area {
+  border: 2px dashed var(--gray-300);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+.photo-upload-area:hover { border-color: var(--primary); background: rgba(0,87,217,.03); }
+.photo-upload-area i { font-size: 2rem; color: var(--gray-400); margin-bottom: .5rem; }
+.photo-upload-area p { font-size: .875rem; color: var(--gray-500); }
+.photo-upload-area input { display: none; }
+.photo-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: .5rem;
+  margin-top: 1rem;
+}
+.photo-preview-item {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+}
+.photo-preview-item img { width: 100%; height: 100%; object-fit: cover; }
+.photo-remove {
+  position: absolute;
+  top: 2px; right: 2px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.6);
+  color: var(--white);
+  font-size: .65rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.photo-preview-item:hover .photo-remove { opacity: 1; }
+
+/* Cards de histórias */
+.stories-section { padding: 3rem 5%; }
+.stories-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 2rem;
+}
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.story-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.story-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.story-card-photo {
+  height: 180px;
+  background: var(--gray-100);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.story-card-photo img { width: 100%; height: 100%; object-fit: cover; }
+.story-card-photo .no-photo { font-size: 3rem; color: var(--gray-300); }
+.story-card-body { padding: 1.25rem; }
+.story-card-team {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: .25rem;
+}
+.story-card-name { font-weight: 700; color: var(--gray-900); margin-bottom: .5rem; }
+.story-card-text { font-size: .875rem; color: var(--gray-600); line-height: 1.6; margin-bottom: .75rem; }
+.story-card-meta {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .8rem;
+  color: var(--gray-400);
+}
+.story-card-meta i { font-size: .75rem; }
+
+/* ---- Embaixadores ---- */
+.embaixadores-page { padding-top: 70px; min-height: 100vh; }
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.material-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-100);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  cursor: default;
+}
+.material-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(0,87,217,.2); }
+.material-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+.material-card h4 { font-weight: 700; color: var(--gray-800); font-size: .95rem; margin-bottom: .25rem; }
+.material-card p { font-size: .8rem; color: var(--gray-500); }
+
+/* Formulário de embaixador */
+.embaixador-form-section { padding: 3rem 5%; background: var(--gray-50); }
+.embaixador-form-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+.embaixador-form-card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: .5rem;
+}
+.embaixador-form-card > p { color: var(--gray-500); margin-bottom: 1.75rem; }
+
+/* Oficinas */
+.oficinas-section { padding: 3rem 5%; }
+.oficinas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.oficina-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--primary);
+}
+.oficina-card h4 { font-weight: 700; color: var(--gray-900); margin-bottom: .5rem; }
+.oficina-meta { font-size: .85rem; color: var(--gray-500); display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: .75rem; }
+.oficina-meta span { display: flex; align-items: center; gap: .3rem; }
+.oficina-feedback { font-size: .875rem; color: var(--gray-600); line-height: 1.6; font-style: italic; }
+
+/* ---- Mapa do Brasil ---- */
+.mapa-section { padding: 3rem 5%; background: var(--gray-50); }
+.mapa-container {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.mapa-container h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+#brazil-map {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+}
+#brazil-map .state {
+  fill: var(--gray-200);
+  stroke: var(--white);
+  stroke-width: 1;
+  transition: fill var(--transition);
+  cursor: pointer;
+}
+#brazil-map .state:hover { fill: var(--primary-light); }
+#brazil-map .state.has-data { fill: var(--primary); }
+#brazil-map .state.has-data:hover { fill: var(--primary-dark); }
+
+/* Tooltip do mapa */
+.map-tooltip {
+  position: fixed;
+  background: var(--gray-900);
+  color: var(--white);
+  padding: .75rem 1rem;
+  border-radius: var(--radius);
+  font-size: .875rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+  z-index: 5000;
+  max-width: 220px;
+}
+.map-tooltip.visible { opacity: 1; }
+.map-tooltip h4 { font-weight: 700; margin-bottom: .25rem; }
+.map-tooltip p { color: rgba(255,255,255,.75); font-size: .8rem; }
+
+/* Legenda */
+.mapa-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  font-size: .875rem;
+  color: var(--gray-600);
+}
+.legend-item { display: flex; align-items: center; gap: .5rem; }
+.legend-dot { width: 14px; height: 14px; border-radius: 50%; }
+.legend-dot.active { background: var(--primary); }
+.legend-dot.inactive { background: var(--gray-200); }

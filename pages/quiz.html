@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Teste seus conhecimentos sobre a FIRST Robotics no quiz Conhecendo a FIRST." />
+  <title>Quiz | Por Trás das Engrenagens</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230057D9'/><text y='22' x='6' font-size='18'>⚙️</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/quiz.css" />
+  <link rel="stylesheet" href="../css/responsivo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div id="loading-screen" role="status">
+    <div class="loading-logo">🎯 <span>Quiz</span></div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html" class="nav-logo">
+      <i class="fa-solid fa-gear"></i>
+      <span>Por Trás das <strong>Engrenagens</strong></span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="livro.html">Livro</a></li>
+      <li><a href="quiz.html" class="active">Quiz</a></li>
+      <li><a href="comunidade.html">Comunidade</a></li>
+      <li><a href="embaixadores.html">Embaixadores</a></li>
+      <li><a href="certificado.html" class="nav-cta"><i class="fa-solid fa-certificate"></i> Certificado</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="quiz-header quiz-page" style="padding-top:100px;">
+    <h1>🎯 Conhecendo a FIRST</h1>
+    <p>10 perguntas para testar seus conhecimentos sobre a FIRST Robotics</p>
+  </header>
+
+  <main class="quiz-container" id="quiz-container">
+    <!-- Barra de progresso -->
+    <div class="quiz-progress-wrap" id="quiz-progress-wrap">
+      <div class="quiz-progress-info">
+        <span id="q-current">Pergunta 1 de 10</span>
+        <span id="q-score-live">0 acertos</span>
+      </div>
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quiz-progress-fill" style="width:10%;"></div>
+      </div>
+    </div>
+
+    <!-- Card da pergunta (gerado pelo JS) -->
+    <div id="question-area"></div>
+  </main>
+
+  <button id="back-to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-chevron-up"></i></button>
+  <div id="toast-container" role="status" aria-live="polite"></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/quiz.js"></script>
+</body>
+</html>

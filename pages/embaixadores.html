@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Programa de Embaixadores Por Trás das Engrenagens — leve a FIRST para sua escola e comunidade." />
+  <title>Embaixadores | Por Trás das Engrenagens</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230057D9'/><text y='22' x='6' font-size='18'>⚙️</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/comunidade.css" />
+  <link rel="stylesheet" href="../css/responsivo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div id="loading-screen" role="status">
+    <div class="loading-logo">🌟 <span>Embaixadores</span></div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <a href="../index.html" class="nav-logo">
+      <i class="fa-solid fa-gear"></i>
+      <span>Por Trás das <strong>Engrenagens</strong></span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="livro.html">Livro</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="comunidade.html">Comunidade</a></li>
+      <li><a href="embaixadores.html" class="active">Embaixadores</a></li>
+      <li><a href="certificado.html" class="nav-cta"><i class="fa-solid fa-certificate"></i> Certificado</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-header embaixadores-page" style="padding-top:100px;">
+    <h1>🌟 Programa Embaixadores</h1>
+    <p>Qualquer equipe pode participar e levar a FIRST para mais escolas e comunidades</p>
+  </header>
+
+  <main>
+    <!-- Sobre o programa -->
+    <section class="section" aria-labelledby="prog-title">
+      <div class="section-header fade-in">
+        <span class="section-tag">Sobre o Programa</span>
+        <h2 class="section-title" id="prog-title">O que é ser Embaixador?</h2>
+        <p class="section-subtitle">
+          Equipes embaixadoras recebem materiais gratuitos e se comprometem a realizar ao menos
+          uma oficina de divulgação da FIRST em sua escola ou comunidade.
+        </p>
+      </div>
+
+      <!-- Materiais disponíveis -->
+      <div class="materials-grid">
+        <div class="material-card fade-in" style="transition-delay:.1s">
+          <div class="material-icon">📘</div>
+          <h4>Livro Digital</h4>
+          <p>PDF completo para distribuição</p>
+        </div>
+        <div class="material-card fade-in" style="transition-delay:.2s">
+          <div class="material-icon">📄</div>
+          <h4>Slides</h4>
+          <p>Apresentação pronta para oficinas</p>
+        </div>
+        <div class="material-card fade-in" style="transition-delay:.3s">
+          <div class="material-icon">🎓</div>
+          <h4>Guia do Embaixador</h4>
+          <p>Passo a passo para realizar oficinas</p>
+        </div>
+        <div class="material-card fade-in" style="transition-delay:.4s">
+          <div class="material-icon">🎨</div>
+          <h4>Materiais Visuais</h4>
+          <p>Banners, cartazes e identidade visual</p>
+        </div>
+        <div class="material-card fade-in" style="transition-delay:.5s">
+          <div class="material-icon">📊</div>
+          <h4>Formulário de Registro</h4>
+          <p>Registre suas oficinas realizadas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário de inscrição -->
+    <section class="embaixador-form-section" id="form-embaixador" aria-labelledby="emb-form-title">
+      <div class="embaixador-form-card fade-in">
+        <h2 id="emb-form-title">🚀 Quero ser Embaixador</h2>
+        <p>Preencha o formulário abaixo e entraremos em contato com os materiais e próximos passos.</p>
+
+        <form id="form-emb" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="e-equipe">Nome da equipe *</label>
+              <input class="form-control" type="text" id="e-equipe" name="equipe" placeholder="Ex: BrontoByte" />
+              <span class="form-error" id="err-e-equipe">Informe o nome da equipe.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="e-categoria">Categoria *</label>
+              <select class="form-control" id="e-categoria" name="categoria">
+                <option value="">Selecione</option>
+                <option value="FLL Jr.">FLL Jr.</option>
+                <option value="FLL">FLL</option>
+                <option value="FTC">FTC</option>
+                <option value="FRC">FRC</option>
+              </select>
+              <span class="form-error" id="err-e-categoria">Selecione a categoria.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="e-cidade">Cidade *</label>
+              <input class="form-control" type="text" id="e-cidade" name="cidade" placeholder="Sua cidade" />
+              <span class="form-error" id="err-e-cidade">Informe a cidade.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="e-estado">Estado *</label>
+              <select class="form-control" id="e-estado" name="estado">
+                <option value="">UF</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
+              </select>
+              <span class="form-error" id="err-e-estado">Selecione o estado.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="e-responsavel">Responsável *</label>
+              <input class="form-control" type="text" id="e-responsavel" name="responsavel" placeholder="Nome do responsável" />
+              <span class="form-error" id="err-e-responsavel">Informe o responsável.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="e-email">E-mail *</label>
+              <input class="form-control" type="email" id="e-email" name="email" placeholder="contato@equipe.com" />
+              <span class="form-error" id="err-e-email">Informe um e-mail válido.</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-star"></i> Quero ser Embaixador
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Oficinas registradas -->
+    <section class="oficinas-section" aria-labelledby="oficinas-title">
+      <div class="section-header">
+        <span class="section-tag">Impacto</span>
+        <h2 class="section-title" id="oficinas-title">Oficinas Realizadas</h2>
+        <p class="section-subtitle">Registre as oficinas realizadas pela sua equipe embaixadora.</p>
+      </div>
+
+      <!-- Formulário de registro de oficina -->
+      <div style="max-width:700px;margin:0 auto 2rem;">
+        <div class="embaixador-form-card">
+          <h2 style="font-size:1.2rem;">Registrar Nova Oficina</h2>
+          <p style="margin-bottom:1.5rem;">Preencha os dados da oficina realizada.</p>
+          <form id="form-oficina" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="o-equipe">Equipe *</label>
+                <input class="form-control" type="text" id="o-equipe" name="equipe" placeholder="Nome da equipe" />
+                <span class="form-error" id="err-o-equipe">Informe a equipe.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-participantes">Nº de participantes *</label>
+                <input class="form-control" type="number" id="o-participantes" name="participantes" placeholder="Ex: 30" min="1" />
+                <span class="form-error" id="err-o-participantes">Informe o número.</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="o-cidade">Cidade *</label>
+                <input class="form-control" type="text" id="o-cidade" name="cidade" placeholder="Cidade da oficina" />
+                <span class="form-error" id="err-o-cidade">Informe a cidade.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="o-estado">Estado *</label>
+                <select class="form-control" id="o-estado" name="estado">
+                  <option value="">UF</option>
+                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                  <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                  <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                  <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                  <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                  <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                  <option>SP</option><option>SE</option><option>TO</option>
+                </select>
+                <span class="form-error" id="err-o-estado">Selecione o estado.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="o-feedback">Feedback dos participantes</label>
+              <textarea class="form-control" id="o-feedback" name="feedback" rows="3"
+                placeholder="Como foi a recepção? O que os participantes acharam?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-plus"></i> Registrar Oficina
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Cards de oficinas -->
+      <div class="oficinas-grid" id="oficinas-grid">
+        <div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--gray-400);" id="oficinas-empty">
+          <i class="fa-solid fa-chalkboard-teacher" style="font-size:2.5rem;margin-bottom:.75rem;display:block;"></i>
+          <p>Nenhuma oficina registrada ainda.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa do Brasil -->
+    <section class="mapa-section" id="mapa" aria-labelledby="mapa-title">
+      <div class="mapa-container fade-in">
+        <h2 id="mapa-title">🗺️ Mapa de Oficinas</h2>
+        <p style="text-align:center;color:var(--gray-500);margin-bottom:1.5rem;">
+          Estados com oficinas realizadas aparecem em azul. Clique para ver detalhes.
+        </p>
+
+        <!-- SVG do Mapa do Brasil -->
+        <svg id="brazil-map" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg"
+             role="img" aria-label="Mapa do Brasil com estados">
+          <!-- Cada path representa um estado — simplificado para fins de demonstração -->
+          <!-- Os caminhos reais seriam mais detalhados; aqui usamos formas representativas -->
+          <g id="states">
+            <!-- Região Norte -->
+            <path class="state" id="AM" data-state="AM" data-name="Amazonas"
+              d="M 120 120 L 280 100 L 320 160 L 300 240 L 240 280 L 160 260 L 100 200 Z"/>
+            <path class="state" id="PA" data-state="PA" data-name="Pará"
+              d="M 280 100 L 420 80 L 460 140 L 440 220 L 380 260 L 300 240 L 320 160 Z"/>
+            <path class="state" id="RR" data-state="RR" data-name="Roraima"
+              d="M 180 60 L 280 40 L 300 100 L 280 100 L 200 120 Z"/>
+            <path class="state" id="AP" data-state="AP" data-name="Amapá"
+              d="M 380 40 L 460 30 L 480 80 L 420 80 Z"/>
+            <path class="state" id="AC" data-state="AC" data-name="Acre"
+              d="M 60 220 L 140 200 L 160 260 L 100 280 Z"/>
+            <path class="state" id="RO" data-state="RO" data-name="Rondônia"
+              d="M 160 260 L 240 280 L 260 340 L 200 360 L 140 320 Z"/>
+            <path class="state" id="TO" data-state="TO" data-name="Tocantins"
+              d="M 380 260 L 440 240 L 460 320 L 440 400 L 380 420 L 340 360 Z"/>
+            <!-- Região Nordeste -->
+            <path class="state" id="MA" data-state="MA" data-name="Maranhão"
+              d="M 440 140 L 520 120 L 540 200 L 500 260 L 440 240 L 420 180 Z"/>
+            <path class="state" id="PI" data-state="PI" data-name="Piauí"
+              d="M 520 120 L 580 100 L 600 180 L 560 260 L 500 260 L 540 200 Z"/>
+            <path class="state" id="CE" data-state="CE" data-name="Ceará"
+              d="M 580 80 L 640 70 L 660 140 L 620 180 L 580 160 L 560 120 Z"/>
+            <path class="state" id="RN" data-state="RN" data-name="Rio Grande do Norte"
+              d="M 640 70 L 700 80 L 700 130 L 660 140 Z"/>
+            <path class="state" id="PB" data-state="PB" data-name="Paraíba"
+              d="M 640 140 L 700 130 L 710 170 L 660 180 Z"/>
+            <path class="state" id="PE" data-state="PE" data-name="Pernambuco"
+              d="M 560 160 L 660 180 L 680 220 L 600 240 L 560 220 Z"/>
+            <path class="state" id="AL" data-state="AL" data-name="Alagoas"
+              d="M 660 220 L 700 210 L 710 250 L 670 260 Z"/>
+            <path class="state" id="SE" data-state="SE" data-name="Sergipe"
+              d="M 660 260 L 700 250 L 710 290 L 670 300 Z"/>
+            <path class="state" id="BA" data-state="BA" data-name="Bahia"
+              d="M 440 260 L 560 240 L 620 280 L 660 360 L 620 440 L 540 480 L 460 460 L 400 400 L 380 320 Z"/>
+            <!-- Região Centro-Oeste -->
+            <path class="state" id="MT" data-state="MT" data-name="Mato Grosso"
+              d="M 200 280 L 340 260 L 380 320 L 360 420 L 280 460 L 200 420 L 180 340 Z"/>
+            <path class="state" id="MS" data-state="MS" data-name="Mato Grosso do Sul"
+              d="M 240 460 L 360 440 L 380 520 L 340 580 L 260 580 L 220 520 Z"/>
+            <path class="state" id="GO" data-state="GO" data-name="Goiás"
+              d="M 360 340 L 440 320 L 480 380 L 460 460 L 380 480 L 340 440 Z"/>
+            <path class="state" id="DF" data-state="DF" data-name="Distrito Federal"
+              d="M 420 400 L 450 395 L 455 420 L 425 425 Z"/>
+            <!-- Região Sudeste -->
+            <path class="state" id="MG" data-state="MG" data-name="Minas Gerais"
+              d="M 440 380 L 560 360 L 620 420 L 600 500 L 520 540 L 440 520 L 400 460 Z"/>
+            <path class="state" id="ES" data-state="ES" data-name="Espírito Santo"
+              d="M 600 420 L 650 410 L 660 480 L 620 500 L 600 460 Z"/>
+            <path class="state" id="RJ" data-state="RJ" data-name="Rio de Janeiro"
+              d="M 540 500 L 620 480 L 640 540 L 580 560 L 540 540 Z"/>
+            <path class="state" id="SP" data-state="SP" data-name="São Paulo"
+              d="M 380 500 L 480 480 L 540 520 L 520 600 L 420 620 L 360 580 Z"/>
+            <!-- Região Sul -->
+            <path class="state" id="PR" data-state="PR" data-name="Paraná"
+              d="M 340 580 L 440 560 L 480 620 L 440 680 L 360 680 L 320 640 Z"/>
+            <path class="state" id="SC" data-state="SC" data-name="Santa Catarina"
+              d="M 360 680 L 460 660 L 480 720 L 420 740 L 360 720 Z"/>
+            <path class="state" id="RS" data-state="RS" data-name="Rio Grande do Sul"
+              d="M 340 720 L 460 700 L 500 780 L 460 840 L 380 860 L 320 800 Z"/>
+          </g>
+        </svg>
+
+        <!-- Legenda -->
+        <div class="mapa-legend">
+          <div class="legend-item">
+            <div class="legend-dot active"></div>
+            <span>Com oficinas realizadas</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot inactive"></div>
+            <span>Sem oficinas ainda</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Tooltip do mapa -->
+  <div class="map-tooltip" id="map-tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <button id="back-to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-chevron-up"></i></button>
+  <div id="toast-container" role="status" aria-live="polite"></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/embaixadores.js"></script>
+  <script src="../js/mapa.js"></script>
+</body>
+</html>
